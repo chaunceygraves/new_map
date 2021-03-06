@@ -1,5 +1,5 @@
 {
     "container": "map",
-    "accessToken": "",
-    "style": "mapbox://styles/mapbox/streets-v11"
+    "accessToken": "pk.eyJ1IjoiY2hhdW5jZXlncmF2ZXMiLCJhIjoiQjNwQm52OCJ9.fxjhfqd0Kri6-6RX_-6hbw",
+    "style": "mapbox://styles/chaunceygraves/ckly5ju3w0rsb17r1uvkz455g"
 }
