@@ -3,7 +3,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import * as mapboxgl from "mapbox-gl";
 import settings from "./settings.json";
 import custom from "./custom-style.json";
-import { Template } from "webpack";
+
 
 let map;
 
@@ -22,6 +22,7 @@ async function init() {
     map.getSource("neighborhoods").setData(neighborhoods);
 
     initPopup();
+    initLegend();
 }
 
 
@@ -61,7 +62,7 @@ function clearHover(){
 
 function initLegend(){
     const legend = document.querySelector("#legend");
-    const Template =document.querySelector("legend-entry");
+    const template =document.querySelector("#legend-entry");
     const fillColorStyle = map.getPaintProperty("neighborhoods-fill", "fill-extrusion-color");
 
     fillColorStyle.splice(0,2);
@@ -69,17 +70,17 @@ function initLegend(){
 
     for (let index = 0; index < fillColorStyle.length; index+=2) {
         const entry = document.importNode(template.content, true);
-        const span = entry.querySelectorAll ("span");
+        const spans = entry.querySelectorAll ("span");
         const color = fillColorStyle[index] ;
         const count = fillColorStyle[index+1] ;
 
         spans[0].style.backgroundColor = color;
 
         if(index === fillColorStyle.length -1){
-
+            spans[1].textContent = ">=" + total;
         } else{
-            spans[1].textContent = total ="-"(count -1);
-            total =count;
+            spans[1].textContent = total +"-"+(count -1);
+            total = count;
 
         }
         

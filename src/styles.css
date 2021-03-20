@@ -15,3 +15,36 @@ main {
 #map {
     height: 100%;
 }
+
+#popup {
+    top: 10px;
+    right: 10px;
+
+}   
+
+h4{
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#legend {
+    position: fixed;
+    bottom:25px;
+    right: 10px;
+
+}
+
+#popup, #legend {
+    position: fixed;
+    background-color: #cccccc;
+    padding: 10px;
+    border-radius: 3px ;
+    border: solid black 1px;
+}
+
+.color{
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border:solid black 1px;
+}

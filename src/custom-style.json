@@ -1,4 +1,87 @@
 {
-    "sources": {},
-    "layers": []
+    "sources": {
+        "sites": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": []
+            }
+        },
+        "neighborhoods": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": []
+            }
+        }
+    },
+    "layers": [
+        {
+            "id": "sites-circles",
+            "type": "circle",
+            "source": "sites"
+        },
+        {
+            "id": "neighborhoods-fill",
+            "type": "fill-extrusion",
+            "source": "neighborhoods",
+            "paint": {
+                "fill-extrusion-opacity":0.5,
+                "fill-extrusion-height" :[
+                    "+",
+                    [
+                        "*",
+                        ["get","count"]
+                        ,5
+                    ],
+                    ["case",
+                    [
+                        "boolean",
+                        ["feature-state","hover"],
+                        false
+                    ],
+                    1000,
+                    0]
+
+                ],
+                "fill-extrusion-color" :[
+                    "step",
+                    ["get","count"],
+                    "#f2f0f7",30,
+                    "#cbc9e2",100,
+                    "#9e9ac8",300,
+                    "#756bb1",800,
+                    "#54278f"
+                ],
+               "fill-extrusion-base": [
+                    "case",
+                    [
+                        "boolean",
+                        ["feature-state","hover"],
+                        false
+                    ],
+                    1000,
+                    0
+
+                ]
+            }
+        },
+        {  
+            "id": "neighborhoods-outlines",
+            "type": "line",
+            "source": "neighborhoods",
+            "paint":{
+                "line-width":[
+                    "case",
+                    [
+                        "boolean",
+                        ["feature-state","hover"],
+                        false
+                    ],
+                    3,
+                    1
+                ]
+            }
+        }
+    ]
 }

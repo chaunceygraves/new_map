@@ -1,5 +1,13 @@
 {
     "container": "map",
-    "accessToken": "pk.eyJ1IjoiY2hhdW5jZXlncmF2ZXMiLCJhIjoiQjNwQm52OCJ9.fxjhfqd0Kri6-6RX_-6hbw",
-    "style": "mapbox://styles/chaunceygraves/ckly5ju3w0rsb17r1uvkz455g"
+    "accessToken": "pk.eyJ1Ijoicmdhc3RvbiIsImEiOiJJYTdoRWNJIn0.MN6DrT07IEKXadCU8xpUMg",
+    "style": "mapbox://styles/rgaston/ckly5hs6v0who17nzke2tv6fh",
+    "center": [
+        -118.269,
+        34.006
+    ],
+    "zoom": 9,
+    "pitch": 40,
+    "customAttribution":"<a href= 'http://historicplacesla.org/' target='_blank'>Historic Places LA</a> | <a href='https://boundaries.latimes.com/' target='_blank'>LA Times</a>"
+
 }
